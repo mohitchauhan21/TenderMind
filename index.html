@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenderMind</title>
+    <link rel="stylesheet" href="b.css"> <!-- Link to external CSS -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+   
+    <header class="header">
+        <div class="logo-container">
+            <h1>TenderMind</h1> 
+            <!-- Space for Logo/Icon -->
+            <div class="logo-icon">
+                <img src="logo.jpg" alt="TenderMind Icon" class="header-icon">
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="button">
+            <button class="nav-button" onclick="window.location.href='b.html'">Home</button>
+            <button class="nav-button" onclick="window.location.href='Book.html'">Books</button>
+            <button class="nav-button" onclick="window.location.href='login.html'">Login</button>
+            <button class="nav-button" onclick="window.location.href='signup.html'">Sign Up</button>
+
+            </div>    
+        </nav>
+    </header>
+    
+
+    <!-- Main Content of Your Website -->
+    <div class="game-container">
+        <!-- Your game content goes here -->
+    </div>
+    <main class="main-content">
+
+        <!-- Hero Section (Welcome Banner) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Welcome to TenderMind</h2>
+                <p>Your journey to a healthier mind starts here. Explore cognitive exercises, engage in mental challenges, and track your goals with ease.</p>
+                <a href="#games" class="cta-btn"></a>
+            </div>
+            <div class="hero-image">
+                <img src="side.jpg" alt="img" />
+            </div>
+        </section>
+    
+        <!-- Cognitive Games Section -->
+        <section class="cognitive-games">
+            <h2 class="section-title">Cognitive Games</h2>
+            <p>Boost your mental agility and memory with our interactive games. Choose from puzzles, memory challenges, and more.</p>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="memory.jpg" alt="Game 1" />
+                    <h3>Memory Challenge</h3>
+                    <p>Train your brain to improve memory with fun exercises.</p>
+                    <!-- <a href="#" class="cta-btn">Play Now</a> -->
+                     <button class="btn" onclick="window.location.href='memory_challenge.html'">Play Now    </button>
+
+                </div>
+                <div class="game-card">
+                    <img src="logic.jpg" alt="Game 2" />
+                    <h3>Logic Puzzle</h3>
+                    <p>Sharpen your problem-solving skills with our tricky puzzles.</p>
+                    <!-- <a href="#" class="cta-btn">Play Now</a> -->
+                    <button class="btn" onclick="window.location.href='logic_puzzle.html'">Play Now</button>
+                </div>
+                <div class="game-card">
+                    <img src="math.jpg" alt="Game 3" />
+                    <h3>Math Trainer</h3>
+                    <p>Improve your quick-thinking and math skills with timed challenges.</p>
+                    <!-- <a href="#" class="cta-btn">Play Now</a> -->
+                     <button class="btn" onclick="window.location.href='math_trainer.html'">Play Now</button>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Daily Challenges Section -->
+        <section class="daily-challenges">
+            <h2 class="section-title">Today's Mental Challenge</h2>
+            <p>Get ready to exercise your brain! Challenge yourself with today's task and track your progress.</p>
+            <div class="challenge-card">
+                <h3>Challenge: 10-Minute Mindfulness</h3>
+                <p>Take 10 minutes today to practice mindfulness. Focus on your breath and observe your thoughts. A calm mind is a sharp mind!</p>
+                <!-- <a href="#" class="cta-btn">Start Challenge</a> -->
+                 <button class="btn" onclick="window.location.href='10minute_mindfulness.html'">Start Challenge</button>
+            </div>
+        </section>
+    
+        <!-- Goal Tracking Section -->
+        <section class="goal-tracking">
+            <h2 class="section-title">Track Your Progress</h2>
+            <p>Set and achieve your mental health goals with our goal tracker. Stay focused and track your improvements daily.</p>
+            <div class="goal-card">
+                <h3>My Mental Health Goals</h3>
+                <p>Track goals like practicing mindfulness, completing cognitive exercises, and more.</p>
+                <!-- <a href="#" class="cta-btn">Set Your Goal</a> -->
+                 <button class="btn" onclick="window.location.href='goal_tracker.html'">Set Your Goal</button>
+            </div>
+        </section>
+    
+        <!-- Mental Health Tips Section -->
+        <section class="mental-health-tips">
+            <h2 class="section-title">Mental Health Tips</h2>
+            <p>We provide daily tips to help you stay mentally strong and focused. Learn healthy habits and mindset tricks to improve your well-being.</p>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Practice Gratitude</h3>
+                    <img src="gratitude.jpg">
+                    <p>Gratitude can improve your mood and mental clarity. Start a gratitude journal today!</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Mindful Breathing</h3>
+                    <img src="yoga.jpg">
+                    <p>Take deep breaths to calm your nerves and boost focus. Try 5 minutes of mindful breathing each day.</p>
+                </div>
+                <div class="tip-card">
+                    <h3> Let's Get Moving</h3>
+                    <img src="walk.jpg">
+                    <p>Physical activity can improve your mental health. Go for a walk or do some yoga to release stress.</p>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/30/20/20250130202010-UDOA4UCJ.js"></script>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>TenderMind</h2> <!-- Brand name again in the footer -->
+                <p>Helping you enhance your cognitive abilities in a fun and engaging way.</p>
+            </div>
+            <div class="footer-middle">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#challenges">Daily Challenges</a></li>
+                    <li><a href="#goals">Goal Tracker</a></li>
+                    <li><a href="#plans">Personalized Plans</a></li>
+                    <li><a href="#tips">Mental Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <!-- Add your website logo here -->
+                <img src="logo.jpg" alt="TenderMind Icon" class="footer-logo-img">
+            </div>
+            <p>&copy; 2025 TenderMind. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

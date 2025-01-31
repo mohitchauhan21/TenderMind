@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | TenderMind</title>
+    <link rel="stylesheet" href="signup.css"> <!-- Link to external CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For FontAwesome icons -->
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <h1>TenderMind</h1>
+            <!-- Space for Logo/Icon -->
+            <div class="logo-icon">
+                <img src="logo.jpg" alt="TenderMind Icon" class="header-icon">
+            </div>
+        </div>
+        <nav class="nav">
+            <!-- Navigation items can be added here if necessary -->
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Sign Up Section -->
+        <section class="signup-section">
+            <div class="signup-container">
+                <h2>Create Your Account</h2>
+                <p>Fill in the details to create your account.</p>
+
+                <form id="signupForm" action="#" method="POST" class="signup-form" onsubmit="return validateSignupForm()">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ID</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Create Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create your password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="cta-btn">Sign Up</button>
+                    </div>
+                    <p class="login-prompt">Already have an account? <a href="login.html" class="cta-btn">Login</a></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>TenderMind</h2>
+                <p>Helping you enhance your cognitive abilities in a fun and engaging way.</p>
+            </div>
+            <div class="footer-middle">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#challenges">Daily Challenges</a></li>
+                    <li><a href="#goals">Goal Tracker</a></li>
+                    <li><a href="#plans">Personalized Plans</a></li>
+                    <li><a href="#tips">Mental Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </footer>
+
+    <script src="signup.js"></script> <!-- Link to external JS -->
+</body>
+</html>

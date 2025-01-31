@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Challenge</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #1e1e2e;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #2b2b3b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 26px;
+            color: #ffcc00;
+        }
+        #sequence {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+            letter-spacing: 5px;
+        }
+        input {
+            font-size: 20px;
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background: #3a3a4a;
+            color: #fff;
+        }
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+        .correct {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #ff4c4c;
+            font-weight: bold;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧠 Memory Challenge</h1>
+        <p>Memorize the number sequence before it disappears!</p>
+        <h2 id="sequence">Ready?</h2>
+        <input type="text" id="userInput" placeholder="Enter the sequence" disabled>
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+        <div class="stats">
+            <span>Level: <span id="level">1</span></span>
+            <span>Score: <span id="score">0</span></span>
+        </div>
+    </div>
+
+    <script>
+        let level = 1, score = 0, sequence = "";
+
+        function generateSequence() {
+            sequence = "";
+            for (let i = 0; i < level + 2; i++) {
+                sequence += Math.floor(Math.random() * 10);
+            }
+            document.getElementById("sequence").innerText = sequence;
+            document.getElementById("userInput").value = "";
+            document.getElementById("userInput").disabled = true;
+            document.getElementById("feedback").innerText = "";
+
+            setTimeout(() => {
+                document.getElementById("sequence").innerText = "🤔 Remember?";
+                document.getElementById("userInput").disabled = false;
+                document.getElementById("userInput").focus();
+            }, 2000 + level * 500); // Hide after 2 seconds + slight increase per level
+        }
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById("userInput").value.trim();
+            let feedback = document.getElementById("feedback");
+
+            if (userAnswer === sequence) {
+                feedback.innerText = "✅ Correct!";
+                feedback.className = "correct";
+                score += level * 10;
+                level++;
+            } else {
+                feedback.innerText = '❌ Incorrect! Correct: ${sequence}';
+                feedback.className = "incorrect";
+                score = Math.max(0, score - 10);
+                level = Math.max(1, level - 1);
+            }
+
+            document.getElementById("score").innerText = score;
+            document.getElementById("level").innerText = level;
+
+            setTimeout(generateSequence, 1500);
+        }
+
+        generateSequence();
+    </script>
+
+</body>
+</html>

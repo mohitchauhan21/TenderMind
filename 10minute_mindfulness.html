@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Minute Everest Mindfulness Breathing</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #dbeafe; /* Soft light blue background */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Light overlay for readability */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 34px;
+            color: #3b82f6; /* Deep blue for Everest feel */
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 22px;
+            color: #555;
+            font-family: 'Georgia', serif;
+            margin: 15px 0;
+        }
+        .timer {
+            font-size: 48px;
+            color: #ffcc00;
+            margin: 20px 0;
+            font-family: 'Verdana', sans-serif;
+        }
+        .instruction {
+            font-size: 22px;
+            color: #222;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: 'Georgia', serif;
+        }
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧘‍♂️ 10-Minute Everest Mindfulness Challenge</h1>
+        <h2>Feel the peace of the mountains as you breathe.</h2>
+
+        <div class="timer" id="timer">10:00</div>
+
+        <div id="instruction" class="instruction">Inhale deeply...</div>
+
+        <button onclick="startBreathingChallenge()" id="startBtn">Start Challenge</button>
+        <button onclick="togglePauseResume()" id="pauseBtn" style="display:none;">Pause Challenge</button>
+    </div>
+
+    <script>
+        let timer;
+        let timeRemaining = 600;  // 10 minutes in seconds
+        let breathingPattern = ["Inhale for 4 seconds", "Hold for 7 seconds", "Exhale for 8 seconds"];
+        let currentPhase = 0; // Track which phase of breathing (Inhale, Hold, Exhale)
+        let isPaused = false;
+        let isRunning = false;
+
+        function updateTimer() {
+            let minutes = Math.floor(timeRemaining / 60);
+            let seconds = timeRemaining % 60;
+            document.getElementById("timer").innerText = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            if (timeRemaining === 0) {
+                clearInterval(timer);
+                document.getElementById("instruction").innerText = "Well done! Challenge complete.";
+                togglePauseResume();
+            } else {
+                timeRemaining--;
+            }
+        }
+
+        function updateBreathingInstruction() {
+            document.getElementById("instruction").innerText = breathingPattern[currentPhase];
+            let duration = currentPhase === 0 ? 4 : currentPhase === 1 ? 7 : 8;
+            currentPhase = (currentPhase + 1) % breathingPattern.length;
+            if (!isPaused) setTimeout(updateBreathingInstruction, duration * 1000);
+        }
+
+        function startBreathingChallenge() {
+            timeRemaining = 600;
+            document.getElementById("timer").innerText = "10:00";
+            document.getElementById("instruction").innerText = breathingPattern[0];
+            isRunning = true;
+            isPaused = false;
+            timer = setInterval(updateTimer, 1000);
+            updateBreathingInstruction();
+
+            document.getElementById("startBtn").style.display = "none";
+            document.getElementById("pauseBtn").style.display = "inline-block";
+        }
+
+        function togglePauseResume() {
+            if (isPaused) {
+                isPaused = false;
+                document.getElementById("pauseBtn").innerText = "Pause Challenge";
+                timer = setInterval(updateTimer, 1000);
+                updateBreathingInstruction();
+            } else {
+                isPaused = true;
+                document.getElementById("pauseBtn").innerText = "Resume Challenge";
+                clearInterval(timer);
+            }
+        }
+    </script>
+
+</body>
+</html>

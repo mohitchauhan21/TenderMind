@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Trainer - Brain Boost</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #1e1e2e;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: #2b2b3b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            font-size: 26px;
+            color: #ffcc00;
+        }
+        p {
+            font-size: 18px;
+            color: #ddd;
+        }
+        #question {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        input {
+            font-size: 20px;
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background: #3a3a4a;
+            color: #fff;
+        }
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+        .correct {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #ff4c4c;
+            font-weight: bold;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .timer {
+            font-weight: bold;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧠 Math Trainer</h1>
+        <p>Sharpen your mind with quick math challenges!</p>
+        <h2 id="question">Loading...</h2>
+        <input type="number" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+        
+        <div class="stats">
+            <span>Score: <span id="score">0</span></span>
+            <span class="timer">⏳ Time Left: <span id="timeLeft">30</span>s</span>
+        </div>
+    </div>
+
+    <script>
+        let num1, num2, operator, correctAnswer, score = 0, timeLeft = 30;
+        let timerInterval;
+
+        function generateQuestion() {
+            num1 = Math.floor(Math.random() * 20) + 1;
+            num2 = Math.floor(Math.random() * 20) + 1;
+            const operators = ["+", "-", "*", "/"];
+            operator = operators[Math.floor(Math.random() * operators.length)];
+
+            switch (operator) {
+                case "+":
+                    correctAnswer = num1 + num2;
+                    break;
+                case "-":
+                    correctAnswer = num1 - num2;
+                    break;
+                case "*":
+                    correctAnswer = num1 * num2;
+                    break;
+                case "/":
+                    correctAnswer = (num1 / num2).toFixed(2);
+                    break;
+            }
+
+            document.getElementById("question").innerText = '${num1} ${operator} ${num2} = ?';
+        }
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById("answer").value;
+            let feedback = document.getElementById("feedback");
+
+            if (parseFloat(userAnswer) === parseFloat(correctAnswer)) {
+                feedback.innerText = "✅ Correct!";
+                feedback.className = "correct";
+                score++;
+            } else {
+                feedback.innerText = '❌ Incorrect! Answer: ${correctAnswer}';
+                feedback.className = "incorrect";
+            }
+
+            document.getElementById("score").innerText = score;
+            document.getElementById("answer").value = "";
+            generateQuestion();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById("timeLeft").innerText = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("feedback").innerHTML = <strong>Time's up! Final Score: ${score}</strong>;
+                    document.getElementById("answer").disabled = true;
+                }
+            }, 1000);
+        }
+
+        generateQuestion();
+        startTimer();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TenderMind</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to external CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For FontAwesome icons -->
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <h1>TenderMind</h1> 
+            <!-- Space for Logo/Icon -->
+            <div class="logo-icon">
+                <img src="logo.jpg" alt="TenderMind Icon" class="header-icon">
+            </div>
+        </div>
+        <nav class="nav">
+            <!-- Navigation items can be added here if necessary -->
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Login Section -->
+        <section class="login-section">
+            <div class="login-container">
+                <h2>Login to TenderMind</h2>
+                <p>Enter your credentials to access your account.</p>
+
+                <form id="loginForm" action="#" method="POST" class="login-form" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="cta-btn">Login</button>
+                    </div>
+                    <p class="signup-prompt">Don't have an account? <a href="signup.html" class="cta-btn">Sign Up</a></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>TenderMind</h2> 
+                <p>Helping you enhance your cognitive abilities in a fun and engaging way.</p>
+            </div>
+            <div class="footer-middle">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#challenges">Daily Challenges</a></li>
+                    <li><a href="#goals">Goal Tracker</a></li>
+                    <li><a href="#plans">Personalized Plans</a></li>
+                    <li><a href="#tips">Mental Health Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </footer>
+
+    <script src="login.js"></script> <!-- Link to external JS -->
+</body>
+</html>

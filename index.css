@@ -1,0 +1,552 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: black;
+    background-color:cornsilk; /* Slightly lighter background for the body */
+}
+
+/* Header Styles */
+ header {
+    /*background-color:brown; */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-container h1 {
+    font-size: 30px;
+    color:brown; 
+    margin: 0;
+}
+
+
+header .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header .nav ul li {
+    margin-right: 20px;
+}
+
+header .nav ul li a {
+    text-decoration: none;
+    color: black; 
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header .nav ul li a:hover {
+    color:burlywood; 
+} 
+/* Header Styles */
+header {
+    background-color: na; /* Deep navy blue for header */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container h1 {
+    font-size: 36px;
+    color:white; /* Elegant gold color for website name */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Space for Logo/Icon */
+.logo-icon {
+    width: 100px; /* Space for the icon */
+    height: 100px;
+}
+
+.header-icon {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Optional: makes the icon circular */
+    border: 2px solid lightblue; /* Gold border for the icon */
+}
+
+/* Navigation Menu */
+nav .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .nav ul li {
+    margin-right: 30px;
+}
+
+nav .nav ul li a {
+    text-decoration: none;
+    color: black; /* Light gray color for nav items */
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .nav ul li a:hover {
+    color: lightstee; /* Gold color on hover */
+    transform: translateY(-3px); /* Slight hover effect for links */
+}
+
+/* Responsive Design for Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .nav ul li {
+        margin-bottom: 15px;
+    }
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    color: black;
+    background-color:lightgray; 
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding: 10px;
+    max-width: 30%;
+    box-sizing: border-box;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    color: brown; 
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+}
+
+.footer-middle h3, .footer-right h3 {
+    font-size: 18px;
+    color: brown;
+    margin-bottom: 10px;
+}
+
+.footer-middle ul, .footer-right ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-middle ul li, .footer-right ul li {
+    margin: 8px 0;
+}
+
+.footer-middle ul li a, .footer-right ul li a {
+    color:black;
+    text-decoration: none;
+    font-size: 16px;  /* Keep font size same as other links */
+    transition: color 0.3s ease;
+}
+
+.footer-middle ul li a:hover, .footer-right ul li a:hover {
+    color: brown; /* Gold color on hover */
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Footer Logo Styles */
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-logo-img {
+    max-width: 50px; /* Adjust the size of the logo */
+    height: auto;
+    border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+/* Update for Social Media Icons - Increased Space */
+.footer-right ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* More space between icons */
+    margin: 0;
+    padding: 0;
+}
+
+.footer-right ul li {
+    margin: 10px; /* More space around each icon */
+}
+
+.footer-right ul li a {
+    color: black;
+    font-size: 16px; /* Same font size as other links */
+    transition: color 0.3s ease;
+}
+
+.footer-right ul li:hover a {
+    color: brown; /* Gold color on hover */
+}
+
+.footer-right ul li i {
+    font-size: 24px; /* Keep icons big enough for visibility */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-right ul li a:hover i {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* Stack icons vertically on small screens */
+    .footer-right ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-right ul li {
+        margin-bottom: 15px;
+    }
+}
+/* General Reset and Base Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: black;
+    background-color:white; /* Slightly lighter background for the body */
+}
+
+.main-content {
+    padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    color: brown;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: lightcoral;
+    color:wheat;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: lightcoral; /* Darker gold on hover */
+}
+
+.hero-image img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Cognitive Games Section */
+.cognitive-games {
+    margin-bottom: 60px;
+}
+
+.cognitive-games h2 {
+    font-size: 30px;
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.cognitive-games p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.games-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.game-card {
+    background-color:wheat;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.game-card h3 {
+    font-size: 24px;
+    color: brown;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Daily Challenges Section */
+.daily-challenges {
+    margin-bottom: 60px;
+}
+
+.daily-challenges h2 {
+    font-size: 30px;
+    color: brown;
+    margin-bottom: 20px;
+}
+
+.daily-challenges p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.challenge-card {
+    background-color:wheat;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.challenge-card h3 {
+    font-size: 24px;
+    color: brown;
+    margin-bottom: 10px;
+}
+
+.challenge-card p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Goal Tracking Section */
+.goal-tracking {
+    margin-bottom: 60px;
+}
+
+.goal-tracking h2 {
+    font-size: 30px;
+    color:brown;
+    margin-bottom: 20px;
+}
+
+.goal-tracking p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.goal-card {
+    background-color:wheat;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goal-card h3 {
+    font-size: 24px;
+    color:brown;
+    margin-bottom: 10px;
+}
+
+.goal-card p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Mental Health Tips Section */
+.mental-health-tips {
+    margin-bottom: 60px;
+}
+
+.mental-health-tips h2 {
+    font-size: 30px;
+    color:brown;
+    margin-bottom: 20px;
+}
+
+.mental-health-tips p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.tips-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tip-card {
+    background-color:wheat;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tip-card h3 {
+    font-size: 22px;
+    color:brown;
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    font-size: 16px;
+    color: black;
+}
+.tip-card img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Style for buttons */
+/* Style for the navigation container */
+.nav {
+    background-color: white;  /* Dark background for the navigation */
+    padding: 20px 0;  /* Vertical padding to give space around the buttons */
+    text-align: center;  /* Center-align the buttons */
+}
+
+/* Style for the button container */
+.button {
+    display: inline-block;
+}
+
+/* Style for individual nav buttons */
+.nav-button {
+    background-color: brown;  /* Green background for the button */
+    color: white;  /* White text */
+    border: 2px solid burlywood;  /* Green border matching the background */
+    border-radius: 8px;  /* Rounded corners */
+    padding: 12px 25px;  /* Padding for the button (height, width) */
+    font-size: 1rem;  /* Text size */
+    font-weight: bold;  /* Make text bold */
+    margin: 10px;  /* Spacing between the buttons */
+    cursor: pointer;  /* Change the cursor to a hand */
+    transition: all 0.3s ease;  /* Smooth transition for hover and active effects */
+    text-transform: uppercase;  /* Capitalize the text */
+    text-decoration: none;  /* Remove underline for links (since it's a button) */
+}
+
+/* Hover effect for buttons */
+.nav-button:hover {
+    background-color: wheat;  /* Darker green on hover */
+    border-color: palevioletred;  /* Match the border color to the background */
+    transform: scale(1.05);  /* Slightly increase the button size on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Add a subtle shadow on hover */
+}
+
+/* Focus effect for buttons (when clicked or tabbed into) */
+.nav-button:focus {
+    outline: none;  /* Remove the default outline */
+    border-color: #1e7e34;  /* Darker green border on focus */
+    box-shadow: 0 0 8px rgba(50, 205, 50, 0.7);  /* Glow effect on focus */
+}
+
+/* Active button effect (when clicked) */
+.nav-button:active {
+    background-color: lightcoral;  /* Even darker green when button is pressed */
+    border-color: khaki;  /* Match the border to the background */
+    transform: scale(0.98);  /* Slightly shrink the button when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Reset the shadow after pressing */
+}
